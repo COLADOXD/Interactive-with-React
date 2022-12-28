@@ -1,14 +1,21 @@
 import React from "react";
-import { Browser, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Calificacion from "../pages/Calificacion";
+import Gracias from "../pages/Gracias";
+import Layout from "../containers/Layout";
 
 const App = () => {
   return (
-    <BrowerRouter>
-      <Switch>
-        <Route exact path="/Calificacion" component={Calificacion} />
-
-        <Route />
-      </Switch>
-    </BrowerRouter>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          {/* <Route exact path="/" component={Calificacion``} /> */}
+          <Route path="/" element={<Calificacion />}></Route>
+          <Route path="/Gracias" element={<Gracias />}></Route>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 };
+
+export default App;
